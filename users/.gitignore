@@ -1,0 +1,26 @@
+# dependencies
+/node_modules
+/.ideas
+/.vscode
+package-lock.json
+
+
+# testing
+/coverage
+/.scannerwork
+test-report.xml
+
+# production
+/build
+
+# inspection pictures
+/uploads
+
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
