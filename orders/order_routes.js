@@ -13,6 +13,7 @@ router.route('/order')
 
 router.route('/order/:_id')
     .get(orderController.getOrderById)
+    .put(orderController.updateOrder)
     .delete(orderController.deleteOrder);
 
 //Export API routes
