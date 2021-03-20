@@ -41,6 +41,7 @@ app.get('/', (req, res) => res.send('Welcome to Express'));
 
 //Use API routes in the App
 app.use('/api', billRoutes)
+app.use('/api/bill/pdf/:_id', (req, res) => res.sendFile(`./billPDFs/bill_${req.params._id}.pdf`, { root: __dirname }));
 
 // Launch app to the specified port
 app.listen(port, function() {

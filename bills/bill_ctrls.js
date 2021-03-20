@@ -1,5 +1,6 @@
 const Bill  = require('./bill_model')
 const axios = require('axios');
+const { createBillPDF } = require("./generateBillPDF");
 
 const createBill = async (req, res) => {
 
@@ -43,6 +44,7 @@ const createBill = async (req, res) => {
         return (
             {
                 item_name: selectedItem[0].item_name,
+                single_price: selectedItem[0].price,
                 quantity: orderArticleItem.quantity,
                 article_price: orderArticleItem.quantity * selectedItem[0].price,
                 currency: selectedItem[0].currency,
@@ -75,11 +77,14 @@ const createBill = async (req, res) => {
 
     bill
         .save()
-        .then(() => {
+        .then((response) => {
+
+            //if bill created successful, then generate bill PDF
+            createBillPDF(response, `./billPDFs/bill_${response._id}.pdf`);
 
             return res.status(201).json({
                 success: true,
-                message: bill,
+                message: response,
             })
         })
         .catch(error => {
@@ -95,7 +100,6 @@ const createBill = async (req, res) => {
 const patchItemQuantity = async (itemId, updatedQuantity) =>{
      await axios.patch(`http://localhost:8002/api/item/${itemId}`, {quantity: updatedQuantity});
 }
-
 
 
 const getBillById = async (req, res) => {
@@ -114,6 +118,7 @@ const getBillById = async (req, res) => {
         return res.status(200).json({ data: bill })
 
     }).catch(err => console.log(err))
+
 }
 
 

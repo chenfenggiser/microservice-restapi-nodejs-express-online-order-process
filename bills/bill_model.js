@@ -6,6 +6,7 @@ const Bill = new Schema(
         username: { type: String, required: true },
         article: [{
                         item_name: { type: String, required: true },
+                        single_price: { type: Number, required: true },
                         quantity: { type: Number, required: true },
                         article_price: { type: Number, required: true },
                         currency: { type: String, required: true },
