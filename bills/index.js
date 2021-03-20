@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //connect to mongoose
-const dbPath = 'mongodb://127.0.0.1:27017/testdb';
+// const dbPath = 'mongodb://127.0.0.1:27017/testdb';
+const dbPath = 'mongodb+srv://chenfeng-1990:Test1234@cluster0.nzay2.mongodb.net/test'
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
 const mongo = mongoose.connect(dbPath, options);
 
@@ -41,6 +42,7 @@ app.get('/', (req, res) => res.send('Welcome to Express'));
 
 //Use API routes in the App
 app.use('/api', billRoutes)
+app.use('/api/bill/pdf/:_id', (req, res) => res.sendFile(`./billPDFs/bill_${req.params._id}.pdf`, { root: __dirname }));
 
 // Launch app to the specified port
 app.listen(port, function() {

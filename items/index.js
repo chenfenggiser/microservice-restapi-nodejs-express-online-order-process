@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //connect to mongoose
-const dbPath = 'mongodb://127.0.0.1:27017/testdb';
+// const dbPath = 'mongodb://127.0.0.1:27017/testdb';
+const dbPath = 'mongodb+srv://chenfeng-1990:Test1234@cluster0.nzay2.mongodb.net/test'
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
 const mongo = mongoose.connect(dbPath, options);
 
