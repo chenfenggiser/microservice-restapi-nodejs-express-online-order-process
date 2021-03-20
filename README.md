@@ -36,7 +36,7 @@ the quantity number of the selected item, or if the isAvailable field of the ite
 
 ## Examples ##
 
-* Inside the example folder, it contains multi screenshots pictures, and a bill PDF file.
+* Inside the examples folder, it contains multi screenshots pictures, and a bill PDF file.
 
 
 
