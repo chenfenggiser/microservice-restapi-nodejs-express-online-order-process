@@ -25,9 +25,9 @@ A simple microservice online order process demo, which created by node.js and ex
 endpoint "http://localhost:8003/api/order", besides, the order json file will be sent to the bill service api via the endpoint 
 "http://localhost:8004/api/bill", then on the bill service, based on the user_id and an array with one or more item_id, then fetch the user's 
   data via the endpoint on the user service, and fetch the items via the endpoint on the item service, then using map and filter methods
-   to get more details information from the user and the item array, then storing it into the bill database, and pdfkit is implemented 
+   to get more details information from the user and the items, then storing it into the bill database, and pdfkit is implemented 
    at this step, a bill PDF file will be generated and
-   stored in the file system, apart from that, nodemailer is implemented at this step).
+   stored in the file system, apart from that, nodemailer is implemented at this step to send an email to the user).
 
 * An order can consist of several articles (stored items as an array, each item contains the item id, ordered quantity), and it contains a user id.
 
