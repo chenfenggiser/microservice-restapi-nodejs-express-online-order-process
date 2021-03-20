@@ -102,9 +102,9 @@ the quantity number of the selected item, or if the isAvailable field of the ite
 
 * Get all orders:
     * Method: GET,  http://localhost:8003/api/orders
-* Get order by id:
+* Get an order by id:
     * Method: GET,  http://localhost:8003/api/order/:id
-* Update item by id:
+* Update an order by id:
     * Method: PUT,  http://localhost:8003/api/order/:id
 * Create an order:
     * Method: POST,  http://localhost:8003/api/order
