@@ -9,6 +9,8 @@ A simple microservice online order process demo, which created by node.js and ex
 * Key word:
     * Microservices, REST-api, Node.js, Express.js, JavaScript, MongoDB, mLab. 
     
+* This system using a cloud mongoDB mLab to store all the data.
+    
 * This system contains 4 services (user service, item service, order service and bill service), it based on the microService architecture.
 
 * These services communicate with each other asynchronously (promise, axios).
