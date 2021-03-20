@@ -1,6 +1,7 @@
 const Bill  = require('./bill_model')
 const axios = require('axios');
 const { createBillPDF } = require("./generateBillPDF");
+const {sendBillPDFByEmail} = require("./sendEmailToUser");
 
 const createBill = async (req, res) => {
 
@@ -81,6 +82,11 @@ const createBill = async (req, res) => {
 
             //if bill created successful, then generate bill PDF
             createBillPDF(response, `./billPDFs/bill_${response._id}.pdf`);
+
+            // send email to user
+            setTimeout(()=>{
+                sendBillPDFByEmail(response.contact_email, response._id)
+            }, 3000)
 
             return res.status(201).json({
                 success: true,
