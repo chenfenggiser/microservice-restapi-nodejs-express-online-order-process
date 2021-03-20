@@ -37,8 +37,6 @@ else
 // Server Port
 var port = process.env.PORT || 8004;
 
-// Welcome message
-app.get('/', (req, res) => res.send('Welcome to Express'));
 
 //Use API routes in the App
 app.use('/api', billRoutes)

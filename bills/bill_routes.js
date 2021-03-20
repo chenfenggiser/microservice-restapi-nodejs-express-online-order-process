@@ -3,8 +3,8 @@ let router = require('express').Router();
 
 let billController = require('./bill_ctrls');
 
-// user routes
 
+// bill routes
 router.route('/bill')
     .post(billController.createBill);
 
